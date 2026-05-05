@@ -5,4 +5,5 @@ Purpose: catalog of all wiki pages in this repo. Update whenever pages are added
 - Activity log: [log.md](./log.md)
 
 ## Pages
-_This section will be expanded as the wiki grows._
+- [2026-05-05 Hermes role routing and progress snapshot](./decisions/2026-05-05__value-up-hermes-role-routing-and-progress-snapshot.md)
+- [2026-05-05 Value-Up Hermes Hindsight architecture](./decisions/2026-05-05__value-up-hermes-hindsight-architecture.md)
