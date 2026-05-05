@@ -95,4 +95,81 @@ These roles are a collaboration protocol. They do not change the wiki schema abo
 - CTO proposes 1-2 implementable options with estimated effort and risks.
 - Critic reviews options, points out hidden costs/failure modes, and suggests mitigations.
 - If still unclear, default to the smallest reversible change and record it in `wiki/decisions/`.
+
+## Paperclip 이슈(티켓) 작성 포맷
+Paperclip 기본 UI를 쓰더라도, 티켓 본문이 자유형이면 에이전트가 “엉뚱한 일”을 하기 쉽다.
+그래서 모든 티켓에는 아래 3개 블록이 반드시 들어가야 한다.
+- `TASKS`: 체크리스트(가능하면 “정확한 파일 경로” 포함)
+- `DONE WHEN`: 완료 조건(acceptance criteria)
+- `OUTPUT PATHS`: 결과물이 저장될 repo 경로(정확한 path)
+
+규칙:
+- 티켓에 파일 경로가 없으면 작업을 시작하지 않는다. 먼저 티켓에 `OUTPUT PATHS` 확정을 요청한다.
+- 경고/징계/결정 같은 “문서” 작업은 `TYPE: decision_record`, 결과는 `wiki/decisions/`에 남긴다.
+- 분석/조사/정리 같은 “지식” 작업은 `TYPE: wiki_update` 또는 `TYPE: research`, 결과는 `wiki/topics/`, `wiki/entities/`, `wiki/sources/`에 남긴다.
+
+### (사용자용) 티켓 템플릿
+아래 블록을 Paperclip 티켓 본문에 그대로 붙여넣고 채운다.
+
+TYPE: wiki_update | decision_record | research | bugfix
+OWNER: CEO | CTO | CSO
+PRIORITY: P0 | P1 | P2
+DUE: YYYY-MM-DD (optional)
+
+CONTEXT:
+- (왜 필요한지, 3~7줄)
+
+INPUTS:
+- (관련 이슈/문서/링크/`raw/` 경로)
+
+TASKS:
+- [ ] (할 일 1: 구체적으로)
+- [ ] (할 일 2)
+
+OUTPUT PATHS:
+- (예: `wiki/decisions/2026-05-03__formal-warning-alex-kim-pue-493.md`)
+- (예: `wiki/index.md`, `wiki/log.md`)
+
+DONE WHEN:
+- (예: 위 파일이 “정확한 경로”에 존재)
+- (예: 문서에 `Verification` 섹션 포함)
+- (예: `wiki/index.md`에 링크 추가)
+- (예: `wiki/log.md`에 새 엔트리 추가)
+
+NOTES:
+- (제약, 문체/톤, 금지사항 등)
+
+### (에이전트용) 티켓 생성 템플릿
+에이전트가 스스로 “해야 할 일”을 발견해서 티켓을 등록할 때는 아래를 지킨다.
+- `TASKS`는 1~5개로 작게 쪼갠다(큰 작업이면 티켓을 여러 개로 쪼갠다).
+- `OUTPUT PATHS`는 반드시 “파일 경로”로 고정한다(“문서 업데이트” 같은 표현 금지).
+- `DONE WHEN`은 검증 가능해야 한다(눈으로 확인 가능한 조건).
+- 결정이 필요한 사안이면 `OWNER: CEO`로 올리고, 에이전트는 임의로 최종 결정을 확정하지 않는다.
+
+에이전트용 예시:
+
+TYPE: decision_record
+OWNER: CEO
+PRIORITY: P1
+
+CONTEXT:
+- refresh_token 공유로 인해 만료 시점에 3개 컨테이너 중 일부가 token rotation으로 영구 실패할 수 있음.
+
+INPUTS:
+- 관련 논의: (티켓/링크)
+
+TASKS:
+- [ ] `wiki/decisions/2026-05-05__oauth-refresh-single-writer.md` 작성(템플릿 준수)
+- [ ] `wiki/index.md`에 decision record 링크 추가
+- [ ] `wiki/log.md`에 `## [2026-05-05] decision | OAuth refresh single-writer` 기록 추가
+
+OUTPUT PATHS:
+- `wiki/decisions/2026-05-05__oauth-refresh-single-writer.md`
+- `wiki/index.md`
+- `wiki/log.md`
+
+DONE WHEN:
+- decision record에 `Risks / Mitigations`, `Verification` 섹션이 존재
+- `wiki/index.md`에서 decision record로 이동 가능한 링크 존재
+- `wiki/log.md`에 새 엔트리가 추가됨
 </INSTRUCTIONS>
