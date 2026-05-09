@@ -4,7 +4,14 @@
 - 시작점: 이 파일
 - 활동 로그: [log.md](./log.md)
 
-## Pages
+## Sources
+- [Karpathy LLM Wiki Gist](./sources/karpathy-llm-wiki-gist.md)
+
+## Topics
+- [LLM Wiki Pattern](./topics/llm-wiki-pattern.md)
+
+## Decisions
+- [2026-05-09 Value-Up Wiki LLM Wiki 아키텍처](./decisions/2026-05-09__value-up-wiki-llm-wiki-architecture.md)
 - [2026-05-06 Hermes 한국어 출력 정책](./decisions/2026-05-06__value-up-hermes-korean-output-policy.md)
 - [2026-05-06 Paperclip 인증된 HTTPS 접속](./decisions/2026-05-06__value-up-paperclip-authenticated-https-access.md)
 - [2026-05-06 Hermes Hindsight 검색 필터 기준선](./decisions/2026-05-06__value-up-hermes-hindsight-retrieval-filter-baseline.md)
@@ -14,3 +21,6 @@
 - [2026-05-06 Hermes 역할 정의 계약](./decisions/2026-05-06__value-up-hermes-role-definition-contract.md)
 - [2026-05-05 Hermes 역할 라우팅 및 진행 스냅샷](./decisions/2026-05-05__value-up-hermes-role-routing-and-progress-snapshot.md)
 - [2026-05-05 Value-Up Hermes Hindsight 아키텍처](./decisions/2026-05-05__value-up-hermes-hindsight-architecture.md)
+
+## Entities
+- 아직 없음

@@ -53,3 +53,15 @@
 
 ## [2026-05-06] decision | Hermes Korean output policy
 - Defaulted Hermes-facing human output to Korean, while preserving exact code, identifiers, filenames, API names, and quoted source text when needed.
+
+## [2026-05-09] decision | Value-Up Wiki LLM Wiki architecture
+- Karpathy gist를 기준으로 `raw/`-`wiki/`-`schema` 3층 구조를 확정하고, source/topic/decision 페이지와 index/log 갱신 규칙을 문서화했다.
+
+## [2026-05-09] ingest | Hermes README snapshot
+- `value-up/hermes/README.md`를 `raw/notes/`에 스냅샷으로 보존하고, `wiki/sources/`, `wiki/topics/`, `wiki/entities/`를 연결해서 첫 ingest 루프를 돌렸다.
+
+## [2026-05-09] correction | Removed cross-repo source misuse
+- `value-up` 레포의 `hermes/README.md`를 잘못 source로 잡은 ingest를 정정하고, `value-up-wiki` 자체의 기준 source인 Karpathy LLM Wiki gist 스냅샷으로 재정렬했다.
+
+## [2026-05-09] ingest | Karpathy LLM Wiki gist snapshot
+- Karpathy gist를 `raw/notes/`에 스냅샷으로 저장하고, `wiki/sources/`와 `wiki/topics/`를 이 레포의 실제 기준 source에 맞게 연결했다.
