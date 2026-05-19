@@ -1,5 +1,10 @@
 목적: 위키 작업(수집, 조회, lint 통과)을 시간순으로 쌓는 append-only 로그.
 
+## [2026-05-20] 결정 | Hermes gpt-5.4 롤아웃
+- `CEO` / `CTO` / `Critic` / Hindsight 메모리 데몬을 모두 `openai-codex / gpt-5.4` 로 맞췄다.
+- `127.0.0.1:8899/health` 를 각 컨테이너에서 확인했고, 모두 `healthy` 상태로 올라왔다.
+- 역할 정의, 라우팅 스냅샷, Hindsight 아키텍처 문서에 남아 있던 Claude / `gpt-5.3-codex` / `gpt-5.4-mini` 표기를 정리했다.
+
 ## [2026-05-05] 초기화 | 저장소 골격
 - 초기 `AGENTS.md` 스키마와 기본 위키 구조를 추가했다.
 

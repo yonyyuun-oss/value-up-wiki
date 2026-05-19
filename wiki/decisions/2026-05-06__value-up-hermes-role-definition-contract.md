@@ -20,9 +20,10 @@
 ## 상태
 - 이 역할 분리는 이제 Hermes 런타임의 기준선이다.
 - 모델 배정은 그대로 유지한다.
-  - `CEO` = `anthropic / claude-sonnet-4-6`
-  - `CTO` = `openai-codex / gpt-5.3-codex`
-  - `Critic` = `openai-codex / gpt-5.4-mini`
+  - `CEO` = `openai-codex / gpt-5.4`
+  - `CTO` = `openai-codex / gpt-5.4`
+  - `Critic` = `openai-codex / gpt-5.4`
+- 모델은 현재 모두 같고, 역할 차이는 책임과 핸드오프 규칙으로 유지한다.
 - 이제 Hindsight와 NATS 조정은 이 고정된 경계 위에서만 진행하고, 동적으로 추론하지 않는다.
 
 ## 역할 계약
